@@ -1,6 +1,8 @@
+import 'package:chat_app/Config/PagePath.dart';
 import 'package:chat_app/Config/Themes.dart';
 import 'package:chat_app/Pages/Welcome/WelcomePage.dart';
 import 'package:chat_app/Pages/splashPage.dart';
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,9 +15,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'SAMPARK',
        theme: lightTheme,
+       getPages: pagePath,
        darkTheme: darkTheme,
       themeMode: ThemeMode.dark,
       home: const WelcomePage(),
