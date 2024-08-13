@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyB-iA-wgaw40C2JKzZZLZFgv7nyKm2mtRg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>137919762393</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.chatApp</string>
+	<key>PROJECT_ID</key>
+	<string>sampark-app-aede3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sampark-app-aede3.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:137919762393:ios:a5bf11dcd8fd061bbd13c8</string>
+</dict>
+</plist>

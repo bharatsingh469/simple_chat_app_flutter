@@ -1,3 +1,4 @@
+import 'package:chat_app/Controller/AuthController.dart';
 import 'package:chat_app/Widget/PrimaryButton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,13 +8,17 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController email = TextEditingController();
+    TextEditingController password = TextEditingController();
+    AuthController authController = Get.put(AuthController());
     return Column(
       children: [
         const SizedBox(
           height: 40,
         ),
-        const TextField(
-          decoration: InputDecoration(
+        TextField(
+          controller: email,
+          decoration: const InputDecoration(
             hintText: "Email",
             prefixIcon: Icon(Icons.alternate_email_rounded),
           ),
@@ -21,8 +26,9 @@ class LoginForm extends StatelessWidget {
         const SizedBox(
           height: 40,
         ),
-        const TextField(
-          decoration: InputDecoration(
+        TextField(
+          controller: password,
+          decoration: const InputDecoration(
             hintText: "Password",
             prefixIcon: Icon(Icons.password_outlined),
           ),
@@ -30,17 +36,25 @@ class LoginForm extends StatelessWidget {
         const SizedBox(
           height: 60,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            PrimaryButton(
-                btnName: "Login",
-                icon: Icons.lock_open_outlined,
-                ontap: () {
-                  Get.offAllNamed("/homePage");
-                }),
-          ],
-        ),
+        Obx(
+          () => authController.isLoading.value
+              ? CircularProgressIndicator()
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    PrimaryButton(
+                        btnName: "Login",
+                        icon: Icons.lock_open_outlined,
+                        ontap: () {
+                          authController.login(
+                            email.text,
+                            password.text,
+                          );
+                          // Get.offAllNamed("/homePage");
+                        }),
+                  ],
+                ),
+        )
       ],
     );
   }

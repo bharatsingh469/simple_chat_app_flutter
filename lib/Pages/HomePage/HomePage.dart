@@ -4,6 +4,7 @@ import 'package:chat_app/Pages/HomePage/Widget/ChatsList.dart';
 import 'package:chat_app/Pages/HomePage/Widget/TabBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,7 +34,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             icon: Icon(Icons.search),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed("/profilePage");
+            },
             icon: Icon(Icons.more_vert),
           )
         ],
