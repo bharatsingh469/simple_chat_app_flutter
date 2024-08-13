@@ -1,5 +1,6 @@
 import 'package:chat_app/Widget/PrimaryButton.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({super.key});
@@ -38,7 +39,7 @@ class SignUpForm extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             PrimaryButton(
-                btnName: "SIGNUP", icon: Icons.lock_open_outlined, ontap: () {}),
+                btnName: "SIGNUP", icon: Icons.lock_open_outlined, ontap: () { Get.offAllNamed("/homePage");}),
           ],
         ), 
       ],

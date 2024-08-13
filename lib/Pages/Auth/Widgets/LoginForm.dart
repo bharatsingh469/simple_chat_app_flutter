@@ -1,5 +1,6 @@
 import 'package:chat_app/Widget/PrimaryButton.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -8,14 +9,16 @@ class LoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-       const SizedBox(height: 40,),
-       const TextField(
+        const SizedBox(
+          height: 40,
+        ),
+        const TextField(
           decoration: InputDecoration(
             hintText: "Email",
             prefixIcon: Icon(Icons.alternate_email_rounded),
           ),
         ),
-       const SizedBox(
+        const SizedBox(
           height: 40,
         ),
         const TextField(
@@ -31,9 +34,13 @@ class LoginForm extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             PrimaryButton(
-                btnName: "Login", icon: Icons.lock_open_outlined, ontap: () {}),
+                btnName: "Login",
+                icon: Icons.lock_open_outlined,
+                ontap: () {
+                  Get.offAllNamed("/homePage");
+                }),
           ],
-        ), 
+        ),
       ],
     );
   }
